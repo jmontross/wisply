@@ -1,11 +1,11 @@
-Wisply::Application.routes.draw do
+Wisply::Application.routes.draw do 
   
   resources :common_cores
 
 
   resources :assignments
-
-
+  # map.root :controller => 'assignments', :action => :view
+  root :to => 'assignments#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
