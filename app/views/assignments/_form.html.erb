@@ -1,0 +1,77 @@
+<%= form_for(@assignment) do |f| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+
+      <ul>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :educationalUse %><br />
+    <%= f.text_field :educationalUse %>
+  </div>
+  <div class="field">
+    <%= f.label :intendedEndUserRole %><br />
+    <%= f.text_field :intendedEndUserRole %>
+  </div>
+  <div class="field">
+    <%= f.label :timeRequired %><br />
+    <%= f.text_field :timeRequired %>
+  </div>
+  <div class="field">
+    <%= f.label :typicalAgeRange %><br />
+    <%= f.text_field :typicalAgeRange %>
+  </div>
+  <div class="field">
+    <%= f.label :interactivityType %><br />
+    <%= f.text_field :interactivityType %>
+  </div>
+  <div class="field">
+    <%= f.label :learningResourceType %><br />
+    <%= f.text_field :learningResourceType %>
+  </div>
+  <div class="field">
+    <%= f.label :commonCore %><br />
+    <%= f.text_field :commonCore %>
+  </div>
+  <div class="field">
+    <%= f.label :useRightsUrl %><br />
+    <%= f.text_field :useRightsUrl %>
+  </div>
+  <div class="field">
+    <%= f.label :isBasedOnUrl %><br />
+    <%= f.text_field :isBasedOnUrl %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :publisherId %><br />
+    <%= f.number_field :publisherId %>
+  </div>
+  <div class="field">
+    <%= f.label :inLanguage %><br />
+    <%= f.text_field :inLanguage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

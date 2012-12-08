@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @common_core.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @common_core.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_common_core_path(@common_core) %> |
+<%= link_to 'Back', common_cores_path %>

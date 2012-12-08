@@ -1,0 +1,51 @@
+<h1>Listing assignments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Educationaluse</th>
+    <th>Intendedenduserrole</th>
+    <th>Timerequired</th>
+    <th>Typicalagerange</th>
+    <th>Interactivitytype</th>
+    <th>Learningresourcetype</th>
+    <th>Commoncore</th>
+    <th>Userightsurl</th>
+    <th>Isbasedonurl</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Publisherid</th>
+    <th>Inlanguage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assignments.each do |assignment| %>
+  <tr>
+    <td><%= assignment.title %></td>
+    <td><%= assignment.location %></td>
+    <td><%= assignment.educationalUse %></td>
+    <td><%= assignment.intendedEndUserRole %></td>
+    <td><%= assignment.timeRequired %></td>
+    <td><%= assignment.typicalAgeRange %></td>
+    <td><%= assignment.interactivityType %></td>
+    <td><%= assignment.learningResourceType %></td>
+    <td><%= assignment.commonCore %></td>
+    <td><%= assignment.useRightsUrl %></td>
+    <td><%= assignment.isBasedOnUrl %></td>
+    <td><%= assignment.description %></td>
+    <td><%= assignment.author %></td>
+    <td><%= assignment.publisherId %></td>
+    <td><%= assignment.inLanguage %></td>
+    <td><%= link_to 'Show', assignment %></td>
+    <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+    <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Assignment', new_assignment_path %>

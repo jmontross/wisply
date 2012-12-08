@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @assignment.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @assignment.location %>
+</p>
+
+<p>
+  <b>Educationaluse:</b>
+  <%= @assignment.educationalUse %>
+</p>
+
+<p>
+  <b>Intendedenduserrole:</b>
+  <%= @assignment.intendedEndUserRole %>
+</p>
+
+<p>
+  <b>Timerequired:</b>
+  <%= @assignment.timeRequired %>
+</p>
+
+<p>
+  <b>Typicalagerange:</b>
+  <%= @assignment.typicalAgeRange %>
+</p>
+
+<p>
+  <b>Interactivitytype:</b>
+  <%= @assignment.interactivityType %>
+</p>
+
+<p>
+  <b>Learningresourcetype:</b>
+  <%= @assignment.learningResourceType %>
+</p>
+
+<p>
+  <b>Commoncore:</b>
+  <%= @assignment.commonCore %>
+</p>
+
+<p>
+  <b>Userightsurl:</b>
+  <%= @assignment.useRightsUrl %>
+</p>
+
+<p>
+  <b>Isbasedonurl:</b>
+  <%= @assignment.isBasedOnUrl %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @assignment.description %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @assignment.author %>
+</p>
+
+<p>
+  <b>Publisherid:</b>
+  <%= @assignment.publisherId %>
+</p>
+
+<p>
+  <b>Inlanguage:</b>
+  <%= @assignment.inLanguage %>
+</p>
+
+
+<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<%= link_to 'Back', assignments_path %>
