@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
@@ -46,3 +47,12 @@ gem "twitter-bootstrap-rails"
 # for authentication.
 gem 'omniauth'
 gem 'omniauth-facebook'
+=======
+source :gemcutter
+
+gem "sinatra"
+gem "koala"
+gem "json"
+gem "httparty"
+gem "thin"
+>>>>>>> dd098e945e905c67ac3411dd395d6653982e7011
