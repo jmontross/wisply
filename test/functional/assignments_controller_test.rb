@@ -18,7 +18,7 @@ class AssignmentsControllerTest < ActionController::TestCase
 
   test "should create assignment" do
     assert_difference('Assignment.count') do
-      post :create, assignment: { author: @assignment.author, commonCore: @assignment.commonCore, description: @assignment.description, educationalUse: @assignment.educationalUse, inLanguage: @assignment.inLanguage, intendedEndUserRole: @assignment.intendedEndUserRole, interactivityType: @assignment.interactivityType, isBasedOnUrl: @assignment.isBasedOnUrl, learningResourceType: @assignment.learningResourceType, location: @assignment.location, publisherId: @assignment.publisherId, timeRequired: @assignment.timeRequired, title: @assignment.title, typicalAgeRange: @assignment.typicalAgeRange, useRightsUrl: @assignment.useRightsUrl }
+      post :create, assignment: { author: @assignment.author, common_core: @assignment.common_core, description: @assignment.description, educational_use: @assignment.educational_use, in_language: @assignment.in_language, intended_end_userole: @assignment.intended_end_userole, interactivity_type: @assignment.interactivity_type, is_based_on_url: @assignment.is_based_on_url, learning_resource_type: @assignment.learning_resource_type, location: @assignment.location, publisher_id: @assignment.publisher_id, time_required: @assignment.time_required, title: @assignment.title, typical_age_range: @assignment.typical_age_range, use_rights_url: @assignment.use_rights_url }
     end
 
     assert_redirected_to assignment_path(assigns(:assignment))
@@ -35,7 +35,7 @@ class AssignmentsControllerTest < ActionController::TestCase
   end
 
   test "should update assignment" do
-    put :update, id: @assignment, assignment: { author: @assignment.author, commonCore: @assignment.commonCore, description: @assignment.description, educationalUse: @assignment.educationalUse, inLanguage: @assignment.inLanguage, intendedEndUserRole: @assignment.intendedEndUserRole, interactivityType: @assignment.interactivityType, isBasedOnUrl: @assignment.isBasedOnUrl, learningResourceType: @assignment.learningResourceType, location: @assignment.location, publisherId: @assignment.publisherId, timeRequired: @assignment.timeRequired, title: @assignment.title, typicalAgeRange: @assignment.typicalAgeRange, useRightsUrl: @assignment.useRightsUrl }
+    put :update, id: @assignment, assignment: { author: @assignment.author, common_core: @assignment.common_core, description: @assignment.description, educational_use: @assignment.educational_use, in_language: @assignment.in_language, intended_end_userole: @assignment.intended_end_userole, interactivity_type: @assignment.interactivity_type, is_based_on_url: @assignment.is_based_on_url, learning_resource_type: @assignment.learning_resource_type, location: @assignment.location, publisher_id: @assignment.publisher_id, time_required: @assignment.time_required, title: @assignment.title, typical_age_range: @assignment.typical_age_range, use_rights_url: @assignment.use_rights_url }
     assert_redirected_to assignment_path(assigns(:assignment))
   end
 

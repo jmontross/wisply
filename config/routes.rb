@@ -1,5 +1,10 @@
 Wisply::Application.routes.draw do
 
+  resources :assignments
+
+
+  devise_for :users
+
   resources :common_cores
 
 

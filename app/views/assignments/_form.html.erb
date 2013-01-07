@@ -1,98 +1,77 @@
-<%= form_for @assignment, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :location, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :location, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :educationalUse, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :educationalUse, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :intendedEndUserRole, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :intendedEndUserRole, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :timeRequired, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :timeRequired, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :typicalAgeRange, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :typicalAgeRange, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :interactivityType, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :interactivityType, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :learningResourceType, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :learningResourceType, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :commonCore, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :commonCore, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :useRightsUrl, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :useRightsUrl, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :isBasedOnUrl, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :isBasedOnUrl, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :description, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :description, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :author, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :author, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :publisherId, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :publisherId, :class => 'number_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :inLanguage, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :inLanguage, :class => 'text_field' %>
-    </div>
-  </div>
+<%= form_for(@assignment) do |f| %>
+  <% if @assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                assignments_path, :class => 'btn' %>
+      <ul>
+      <% @assignment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :common_core %><br />
+    <%= f.text_field :common_core %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :educational_use %><br />
+    <%= f.text_field :educational_use %>
+  </div>
+  <div class="field">
+    <%= f.label :in_language %><br />
+    <%= f.text_field :in_language %>
+  </div>
+  <div class="field">
+    <%= f.label :intended_end_userole %><br />
+    <%= f.text_field :intended_end_userole %>
+  </div>
+  <div class="field">
+    <%= f.label :interactivity_type %><br />
+    <%= f.text_field :interactivity_type %>
+  </div>
+  <div class="field">
+    <%= f.label :is_based_on_url %><br />
+    <%= f.text_field :is_based_on_url %>
+  </div>
+  <div class="field">
+    <%= f.label :learning_resource_type %><br />
+    <%= f.text_field :learning_resource_type %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher_id %><br />
+    <%= f.text_field :publisher_id %>
+  </div>
+  <div class="field">
+    <%= f.label :time_required %><br />
+    <%= f.text_field :time_required %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :typical_age_range %><br />
+    <%= f.text_field :typical_age_range %>
+  </div>
+  <div class="field">
+    <%= f.label :use_rights_url %><br />
+    <%= f.text_field :use_rights_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
   </div>
 <% end %>

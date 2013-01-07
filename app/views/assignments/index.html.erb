@@ -1,64 +1,51 @@
-<%- model_class = Assignment -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:location) %></th>
-      <th><%= model_class.human_attribute_name(:educationalUse) %></th>
-      <th><%= model_class.human_attribute_name(:intendedEndUserRole) %></th>
-      <th><%= model_class.human_attribute_name(:timeRequired) %></th>
-      <th><%= model_class.human_attribute_name(:typicalAgeRange) %></th>
-      <th><%= model_class.human_attribute_name(:interactivityType) %></th>
-      <th><%= model_class.human_attribute_name(:learningResourceType) %></th>
-      <th><%= model_class.human_attribute_name(:commonCore) %></th>
-      <th><%= model_class.human_attribute_name(:useRightsUrl) %></th>
-      <th><%= model_class.human_attribute_name(:isBasedOnUrl) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:author) %></th>
-      <th><%= model_class.human_attribute_name(:publisherId) %></th>
-      <th><%= model_class.human_attribute_name(:inLanguage) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @assignments.each do |assignment| %>
-      <tr>
-        <td><%= link_to assignment.id, assignment_path(assignment) %></td>
-        <td><%= assignment.title %></td>
-        <td><%= assignment.location %></td>
-        <td><%= assignment.educationalUse %></td>
-        <td><%= assignment.intendedEndUserRole %></td>
-        <td><%= assignment.timeRequired %></td>
-        <td><%= assignment.typicalAgeRange %></td>
-        <td><%= assignment.interactivityType %></td>
-        <td><%= assignment.learningResourceType %></td>
-        <td><%= assignment.commonCore %></td>
-        <td><%= assignment.useRightsUrl %></td>
-        <td><%= assignment.isBasedOnUrl %></td>
-        <td><%= assignment.description %></td>
-        <td><%= assignment.author %></td>
-        <td><%= assignment.publisherId %></td>
-        <td><%= assignment.inLanguage %></td>
-        <td><%=l assignment.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_assignment_path(assignment), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      assignment_path(assignment),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
+<h1>Listing assignments</h1>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Common core</th>
+    <th>Description</th>
+    <th>Educational use</th>
+    <th>In language</th>
+    <th>Intended end userole</th>
+    <th>Interactivity type</th>
+    <th>Is based on url</th>
+    <th>Learning resource type</th>
+    <th>Location</th>
+    <th>Publisher</th>
+    <th>Time required</th>
+    <th>Title</th>
+    <th>Typical age range</th>
+    <th>Use rights url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assignments.each do |assignment| %>
+  <tr>
+    <td><%= assignment.author %></td>
+    <td><%= assignment.common_core %></td>
+    <td><%= assignment.description %></td>
+    <td><%= assignment.educational_use %></td>
+    <td><%= assignment.in_language %></td>
+    <td><%= assignment.intended_end_userole %></td>
+    <td><%= assignment.interactivity_type %></td>
+    <td><%= assignment.is_based_on_url %></td>
+    <td><%= assignment.learning_resource_type %></td>
+    <td><%= assignment.location %></td>
+    <td><%= assignment.publisher_id %></td>
+    <td><%= assignment.time_required %></td>
+    <td><%= assignment.title %></td>
+    <td><%= assignment.typical_age_range %></td>
+    <td><%= assignment.use_rights_url %></td>
+    <td><%= link_to 'Show', assignment %></td>
+    <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+    <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_assignment_path,
-            :class => 'btn btn-primary' %>
+<br />
+
+<%= link_to 'New Assignment', new_assignment_path %>

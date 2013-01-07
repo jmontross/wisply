@@ -34,4 +34,9 @@ Wisply::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #devise thing http://railscasts.com/episodes/209-introducing-devise?view=asciicast
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+
 end
