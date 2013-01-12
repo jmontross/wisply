@@ -12,6 +12,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'newrelic_rpm'
 end
 
 
@@ -55,5 +56,5 @@ gem "twitter-bootstrap-rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise', '1.1.rc0'
-gem 'newrelic_rpm'
+
 
