@@ -5,7 +5,15 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
 
 gem 'json'
 
@@ -47,3 +55,5 @@ gem "twitter-bootstrap-rails"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'devise', '1.1.rc0'
+gem 'newrelic_rpm'
+
